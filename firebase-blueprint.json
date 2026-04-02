@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "supportRequest": {
+      "title": "Support Request",
+      "description": "A request for TI support from a client.",
+      "type": "object",
+      "properties": {
+        "clientId": { "type": "string", "description": "UID of the client who made the request." },
+        "clientName": { "type": "string", "description": "Name of the client." },
+        "clientEmail": { "type": "string", "description": "Email of the client." },
+        "clientPhone": { "type": "string", "description": "Phone number of the client." },
+        "serviceType": { "type": "string", "description": "Type of service requested." },
+        "description": { "type": "string", "description": "Detailed description of the problem." },
+        "status": { "type": "string", "enum": ["pending", "assigned", "in-progress", "completed", "cancelled"], "description": "Current status of the request." },
+        "technicianId": { "type": "string", "description": "UID of the assigned technician." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp of when the request was created." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Timestamp of the last update." }
+      },
+      "required": ["clientId", "serviceType", "description", "status", "createdAt"]
+    },
+    "userProfile": {
+      "title": "User Profile",
+      "description": "Profile information for clients and technicians.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID." },
+        "displayName": { "type": "string", "description": "Full name of the user." },
+        "email": { "type": "string", "description": "Email address." },
+        "role": { "type": "string", "enum": ["client", "technician", "admin"], "description": "User role." },
+        "phone": { "type": "string", "description": "Phone number." },
+        "photoURL": { "type": "string", "description": "URL to profile picture." },
+        "isApproved": { "type": "boolean", "description": "Whether the technician is approved by admin." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp of registration." }
+      },
+      "required": ["uid", "email", "role", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/supportRequests/{requestId}": {
+      "schema": "supportRequest",
+      "description": "Collection of all support requests."
+    },
+    "/users/{userId}": {
+      "schema": "userProfile",
+      "description": "User profiles for clients and technicians."
+    }
+  }
+}

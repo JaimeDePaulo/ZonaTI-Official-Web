@@ -1,0 +1,5 @@
+{
+  "name": "ZonaTI Web Platform",
+  "description": "Modern, responsive, and professional TI support platform for Angola.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"]
+}
