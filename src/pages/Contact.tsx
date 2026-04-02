@@ -70,7 +70,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500 uppercase tracking-wider font-bold mb-1">Localização</p>
-                      <p className="text-secondary font-medium">Luanda, Angola</p>
+                      <p className="text-secondary font-medium">Lubango, Angola</p>
                     </div>
                   </div>
                 </div>

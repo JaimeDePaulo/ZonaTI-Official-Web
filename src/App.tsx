@@ -9,6 +9,7 @@ import HowItWorks from './pages/HowItWorks';
 import Login from './pages/Login';
 import SupportRequest from './pages/SupportRequest';
 import TechnicianDashboard from './pages/TechnicianDashboard';
+import ClientDashboard from './pages/ClientDashboard';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="/contacto" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/pedido" element={<SupportRequest />} />
+            <Route path="/cliente/dashboard" element={<ClientDashboard />} />
             <Route path="/tecnico/dashboard" element={<TechnicianDashboard />} />
           </Routes>
         </main>

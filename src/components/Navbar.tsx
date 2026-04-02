@@ -34,6 +34,8 @@ export default function Navbar() {
 
   if (userRole === 'technician' || userRole === 'admin') {
     navLinks.push({ name: 'Solicitações', href: '/tecnico/dashboard' });
+  } else if (userRole === 'client') {
+    navLinks.push({ name: 'Minha Área', href: '/cliente/dashboard' });
   }
 
   return (
